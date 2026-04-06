@@ -9,6 +9,7 @@ const courts = [
     courtCount: 8,
     address: "700 E. Gardena Bl. Carson CA 90746",
     mapUrl: "https://maps.google.com/?q=700+E+Gardena+Blvd+Carson+CA+90746",
+    embedQuery: "700+E+Gardena+Blvd+Carson+CA+90746",
     weekday: "Mon - Fri: 8 AM - 8:30 PM",
     weekend: "Sat - Sun: 8 AM - 4:30 PM",
     features: ["8 dedicated pickleball courts", "Free public access", "Lighted courts", "Parking available"],
@@ -20,6 +21,7 @@ const courts = [
     courtCount: 4,
     address: "17400 Lysander Dr. Carson CA 90746",
     mapUrl: "https://maps.google.com/?q=17400+Lysander+Dr+Carson+CA+90746",
+    embedQuery: "17400+Lysander+Dr+Carson+CA+90746",
     weekday: "Mon - Fri: 8 AM - 8:30 PM",
     weekend: "Sat - Sun: 8 AM - 4:30 PM",
     features: ["4 dedicated pickleball courts", "Free public access", "Restroom facilities", "Parking available"],
@@ -31,6 +33,7 @@ const courts = [
     courtCount: 4,
     address: "21330 S. Santa Fe Ave, Carson CA 90810",
     mapUrl: "https://maps.google.com/?q=21330+S+Santa+Fe+Ave+Carson+CA+90810",
+    embedQuery: "21330+S+Santa+Fe+Ave+Carson+CA+90810",
     weekday: "Mon - Fri: 3 PM - 8:30 PM",
     weekend: "Sat - Sun: 8 AM - 4:30 PM",
     features: ["4 dedicated pickleball courts", "Free public access", "Afternoon/evening hours", "Parking available"],
@@ -42,6 +45,7 @@ const courts = [
     courtCount: 1,
     address: "21205 Water St. Carson CA 90745",
     mapUrl: "https://maps.google.com/?q=21205+Water+St+Carson+CA+90745",
+    embedQuery: "21205+Water+St+Carson+CA+90745",
     weekday: "Mon - Fri: 8 AM - 8:30 PM",
     weekend: "Sat - Sun: 8 AM - 4:30 PM",
     features: ["1 pickleball court", "Free public access", "Open park setting", "Parking available"],
@@ -123,7 +127,7 @@ export default function Courts() {
                   </div>
 
                   {/* Features */}
-                  <div>
+                  <div className="mb-6">
                     <h3 className="text-xs uppercase tracking-wider text-muted mb-2">
                       Court Features
                     </h3>
@@ -139,6 +143,21 @@ export default function Courts() {
                       ))}
                     </div>
                   </div>
+                </div>
+
+                {/* Embedded Google Map */}
+                <div className="border-t border-card-border">
+                  <iframe
+                    src={`https://www.google.com/maps?q=${court.embedQuery}&output=embed`}
+                    width="100%"
+                    height="200"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`Map of ${court.name}`}
+                    className="grayscale hover:grayscale-0 transition-all duration-500"
+                  />
                 </div>
               </div>
             </Reveal>
