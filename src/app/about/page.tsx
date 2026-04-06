@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/Reveal";
+import { FloatingPickleballs } from "@/components/FloatingPickleballs";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
 export default function About() {
@@ -34,25 +35,7 @@ export default function About() {
           </svg>
         </div>
 
-        {/* Floating pickleball shapes */}
-        <motion.div
-          animate={{ y: [-8, 8, -8], rotate: [0, 5, 0] }}
-          transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-          className="absolute top-28 right-[15%] w-16 h-16 rounded-full border-2 border-brand-green/10 hidden md:block"
-        >
-          {/* Holes pattern */}
-          <div className="absolute inset-2 grid grid-cols-3 grid-rows-3 gap-1 opacity-30">
-            {[...Array(9)].map((_, i) => (
-              <div key={i} className="rounded-full bg-brand-green/20" />
-            ))}
-          </div>
-        </motion.div>
-
-        <motion.div
-          animate={{ y: [6, -6, 6], rotate: [0, -3, 0] }}
-          transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-20 left-[10%] w-10 h-10 rounded-full border border-brand-green/8 hidden md:block"
-        />
+        <FloatingPickleballs variant="about" />
 
         {/* Green accent line -- like a paddle swing trail */}
         <motion.div

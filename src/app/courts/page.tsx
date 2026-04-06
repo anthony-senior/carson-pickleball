@@ -1,6 +1,7 @@
 "use client";
 
 import { Reveal } from "@/components/Reveal";
+import { FloatingPickleballs } from "@/components/FloatingPickleballs";
 import { MapPin, Clock, ArrowRight, CheckCircle, Info, Calendar, Briefcase } from "lucide-react";
 
 const courts = [
@@ -64,7 +65,8 @@ export default function Courts() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 relative">
+      <section className="pt-32 pb-16 px-6 relative overflow-hidden">
+        <FloatingPickleballs variant="courts" />
         <div className="relative max-w-7xl mx-auto">
           <Reveal>
             <span className="text-xs uppercase tracking-[0.2em] text-brand-green font-semibold">

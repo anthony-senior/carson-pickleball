@@ -1,6 +1,7 @@
 "use client";
 
 import { Reveal } from "@/components/Reveal";
+import { FloatingPickleballs } from "@/components/FloatingPickleballs";
 import { MessageSquare, Users, Trophy, HelpCircle, Dumbbell, ArrowRight, Lock } from "lucide-react";
 
 const categories = [
@@ -25,7 +26,8 @@ export default function Forum() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 relative">
+      <section className="pt-32 pb-16 px-6 relative overflow-hidden">
+        <FloatingPickleballs variant="forum" />
         <div className="relative max-w-7xl mx-auto">
           <Reveal>
             <span className="text-xs uppercase tracking-[0.2em] text-brand-green font-semibold">
