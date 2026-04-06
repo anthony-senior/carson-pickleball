@@ -86,7 +86,7 @@ export default function Home() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-card-border bg-card-bg/50 backdrop-blur mb-8"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse" />
-            <span className="text-sm text-muted">Carson, California</span>
+            <span className="text-sm text-white">Carson, California</span>
           </motion.div>
 
           {/* Main heading */}
@@ -105,9 +105,9 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="font-[family-name:var(--font-display)] text-2xl md:text-3xl tracking-[0.3em] text-muted/80 mb-8"
+            className="font-[family-name:var(--font-display)] text-2xl md:text-3xl tracking-[0.3em] text-white mb-8"
           >
-            IT&apos;S A VIBE!
+            IT&apos;S A <span className="text-brand-green text-glow-sm">VIBE</span>!
           </motion.p>
 
           {/* Description */}
@@ -179,7 +179,7 @@ export default function Home() {
                   <div className="font-[family-name:var(--font-display)] text-3xl tracking-wide text-foreground">
                     {stat.value}
                   </div>
-                  <div className="text-xs text-muted mt-1 uppercase tracking-wider">
+                  <div className="text-xs text-foreground/80 mt-1 uppercase tracking-wider">
                     {stat.label}
                   </div>
                 </div>
@@ -228,13 +228,13 @@ export default function Home() {
                       </span>
                     </div>
 
-                    <div className="flex items-start gap-2 text-sm text-muted mb-4">
-                      <MapPin size={14} className="mt-0.5 shrink-0" />
+                    <div className="flex items-start gap-2 text-sm text-foreground/90 mb-4">
+                      <MapPin size={14} className="mt-0.5 shrink-0 text-brand-green/60" />
                       <span>{court.address}</span>
                     </div>
 
-                    <div className="flex items-start gap-2 text-sm text-muted mb-6">
-                      <Clock size={14} className="mt-0.5 shrink-0" />
+                    <div className="flex items-start gap-2 text-sm text-foreground/90 mb-6">
+                      <Clock size={14} className="mt-0.5 shrink-0 text-brand-green/60" />
                       <div>
                         <div>{court.weekday}</div>
                         <div>{court.weekend}</div>

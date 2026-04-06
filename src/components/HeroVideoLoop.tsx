@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const videos = ["/images/hero-video-1.mp4", "/images/hero-video-2.mp4"];
+const videos = ["/images/hero-video-2.mp4", "/images/hero-video-1.mp4"];
 
 export function HeroVideoLoop() {
   const [activeIndex, setActiveIndex] = useState(0);

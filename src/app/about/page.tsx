@@ -35,7 +35,7 @@ export default function About() {
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-card-border bg-card-bg text-sm text-brand-green mb-6">
                 The Story
               </span>
-              <div className="space-y-5 text-muted leading-relaxed">
+              <div className="space-y-5 text-foreground/85 leading-relaxed">
                 <p>
                   Carson Pickleball was the vision of USAP Ambassador Tony
                   Senior working in cooperation with the City of Carson Parks
@@ -94,7 +94,7 @@ export default function About() {
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-green/20 bg-brand-green/5 text-sm text-brand-green mb-6">
                 The Philosophy
               </span>
-              <p className="text-muted leading-relaxed text-lg">
+              <p className="text-foreground/85 leading-relaxed text-lg">
                 The philosophy in Carson is to foster an environment of
                 inclusivity for all players of all levels. New players often find
                 it intimidating to venture to a new venue and &quot;paddle up&quot;,
@@ -109,7 +109,7 @@ export default function About() {
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-blue/20 bg-brand-blue/5 text-sm text-brand-blue mb-6">
                 Our Commitment
               </span>
-              <p className="text-muted leading-relaxed text-lg">
+              <p className="text-foreground/85 leading-relaxed text-lg">
                 The Carson Pickleball community continues to grow at a rapid rate
                 with new courts being added by city and private entities. We are
                 committed to continuing our mission of providing a safe, vibrant,
