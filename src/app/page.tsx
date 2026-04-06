@@ -61,9 +61,20 @@ export default function Home() {
     <>
       {/* === HERO === */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-        {/* Background grid */}
-        <div className="absolute inset-0 grid-pattern" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+        {/* Background video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/images/hero-video.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-background/70" />
+        {/* Gradient fade to solid at bottom */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
 
         {/* Decorative green line */}
         <motion.div
