@@ -260,9 +260,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* === MISSION SECTION === */}
-      <section className="py-24 px-6 relative">
-        <div className="absolute inset-0 stripe-accent" />
+      {/* === MISSION SECTION (Parallax) === */}
+      <section className="relative py-32 px-6 overflow-hidden">
+        {/* Parallax background image */}
+        <div
+          className="absolute inset-0 -top-20 -bottom-20 bg-cover bg-center bg-fixed"
+          style={{ backgroundImage: "url('/images/mission-bg.jpg')" }}
+        />
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-[2px]" />
+        {/* Green gradient accent */}
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-green/5 via-transparent to-brand-green/5" />
+
         <div className="relative max-w-4xl mx-auto text-center">
           <Reveal>
             <span className="text-xs uppercase tracking-[0.2em] text-brand-green font-semibold">
@@ -273,7 +282,7 @@ export default function Home() {
               <br />
               THROUGH PICKLEBALL
             </h2>
-            <p className="text-lg text-muted max-w-2xl mx-auto leading-relaxed mb-8">
+            <p className="text-lg text-foreground/80 max-w-2xl mx-auto leading-relaxed mb-8">
               The philosophy in Carson is to foster an environment of
               inclusivity for all players of all levels. We strive to welcome
               new players and help them navigate the waters of our growing
@@ -281,7 +290,7 @@ export default function Home() {
             </p>
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-card-border rounded hover:border-brand-green/40 hover:text-brand-green transition-all text-sm font-semibold"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-foreground/20 rounded hover:border-brand-green/40 hover:text-brand-green transition-all text-sm font-semibold bg-background/30 backdrop-blur"
             >
               Learn more <ArrowRight size={14} />
             </Link>
