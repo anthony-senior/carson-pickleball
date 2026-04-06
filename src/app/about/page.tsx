@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/Reveal";
 import { FloatingPickleballs } from "@/components/FloatingPickleballs";
@@ -62,6 +63,24 @@ export default function About() {
         </div>
       </section>
 
+      {/* Wide community photo */}
+      <section className="px-6 pb-12">
+        <div className="max-w-7xl mx-auto">
+          <Reveal>
+            <div className="rounded-lg overflow-hidden border border-card-border">
+              <Image
+                src="https://cdn.prod.website-files.com/6940950f26454356a111ceda/698e2ecb8e6091a7960f7dd4_DJI_20240210105513_0016_D-Edit.png"
+                alt="Carson Pickleball community group photo"
+                width={1600}
+                height={700}
+                className="w-full h-auto object-cover"
+                priority
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Story */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
@@ -101,13 +120,14 @@ export default function About() {
 
           <Reveal direction="right">
             <div className="relative">
-              <div className="aspect-[4/5] rounded-lg bg-gradient-to-br from-card-bg to-surface border border-card-border overflow-hidden flex items-center justify-center">
-                <div className="text-center px-8">
-                  <div className="font-[family-name:var(--font-display)] text-[8rem] leading-none text-brand-green/10">
-                    CP
-                  </div>
-                  <p className="text-muted text-sm mt-4">Carson Pickleball Community</p>
-                </div>
+              <div className="rounded-lg overflow-hidden border border-card-border">
+                <Image
+                  src="https://cdn.prod.website-files.com/6940950f26454356a111ceda/698e2eca898d38983c6677bd_P1010003-2.jpg"
+                  alt="Carson Pickleball players vibin in Carson"
+                  width={860}
+                  height={1000}
+                  className="w-full h-auto object-cover"
+                />
               </div>
               {/* Est badge */}
               <div className="absolute -bottom-4 -right-4 w-20 h-20 rounded-full bg-brand-green flex items-center justify-center">
