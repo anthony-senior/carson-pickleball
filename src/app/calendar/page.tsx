@@ -82,31 +82,8 @@ export default function CalendarPage() {
               </div>
             </Reveal>
 
-            {/* Event types */}
-            <Reveal direction="right" delay={0.1}>
-              <div className="rounded-lg border border-card-border bg-card-bg p-6">
-                <h3 className="font-[family-name:var(--font-display)] text-lg tracking-wide mb-4">
-                  EVENT TYPES
-                </h3>
-                <div className="space-y-2.5">
-                  {[
-                    { label: "Open Play", color: "bg-brand-green" },
-                    { label: "League", color: "bg-brand-blue" },
-                    { label: "Tournament", color: "bg-accent-gold" },
-                    { label: "Clinic", color: "bg-[#f97316]" },
-                    { label: "Social", color: "bg-[#a855f7]" },
-                  ].map((et) => (
-                    <div key={et.label} className="flex items-center gap-3">
-                      <span className={`w-3 h-3 rounded-full ${et.color}`} />
-                      <span className="text-sm text-foreground/80">{et.label}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
-
             {/* League CTA */}
-            <Reveal direction="right" delay={0.2}>
+            <Reveal direction="right" delay={0.1}>
               <div className="rounded-lg border border-brand-blue/20 bg-brand-blue/5 p-6">
                 <h3 className="font-semibold mb-2">Join a League</h3>
                 <p className="text-sm text-foreground/70 mb-4">
