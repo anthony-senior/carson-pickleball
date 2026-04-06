@@ -24,7 +24,6 @@ export default function Gallery() {
     <>
       {/* Hero */}
       <section className="pt-32 pb-16 px-6 relative">
-        <div className="absolute inset-0 grid-pattern opacity-50" />
         <div className="relative max-w-4xl mx-auto text-center">
           <Reveal>
             <span className="text-xs uppercase tracking-[0.2em] text-brand-green font-semibold">

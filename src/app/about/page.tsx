@@ -1,15 +1,67 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Reveal } from "@/components/Reveal";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
 export default function About() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-20 px-6 relative">
-        <div className="absolute inset-0 grid-pattern opacity-50" />
+      {/* Hero with pickleball court SVG background */}
+      <section className="pt-32 pb-20 px-6 relative overflow-hidden">
+        {/* Pickleball court lines as decorative background */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-[0.04]">
+          <svg
+            viewBox="0 0 880 400"
+            className="w-[140%] max-w-none"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            {/* Outer court */}
+            <rect x="40" y="20" width="800" height="360" rx="4" />
+            {/* Center line */}
+            <line x1="440" y1="20" x2="440" y2="380" />
+            {/* Non-volley zone (kitchen) lines */}
+            <line x1="240" y1="20" x2="240" y2="380" strokeDasharray="8 4" />
+            <line x1="640" y1="20" x2="640" y2="380" strokeDasharray="8 4" />
+            {/* Center service lines */}
+            <line x1="240" y1="200" x2="440" y2="200" />
+            <line x1="440" y1="200" x2="640" y2="200" />
+            {/* Net */}
+            <line x1="440" y1="0" x2="440" y2="400" strokeWidth="3" className="text-brand-green" opacity="0.3" />
+          </svg>
+        </div>
+
+        {/* Floating pickleball shapes */}
+        <motion.div
+          animate={{ y: [-8, 8, -8], rotate: [0, 5, 0] }}
+          transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+          className="absolute top-28 right-[15%] w-16 h-16 rounded-full border-2 border-brand-green/10 hidden md:block"
+        >
+          {/* Holes pattern */}
+          <div className="absolute inset-2 grid grid-cols-3 grid-rows-3 gap-1 opacity-30">
+            {[...Array(9)].map((_, i) => (
+              <div key={i} className="rounded-full bg-brand-green/20" />
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          animate={{ y: [6, -6, 6], rotate: [0, -3, 0] }}
+          transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
+          className="absolute bottom-20 left-[10%] w-10 h-10 rounded-full border border-brand-green/8 hidden md:block"
+        />
+
+        {/* Green accent line -- like a paddle swing trail */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
+          className="absolute top-1/2 left-0 w-24 h-px bg-gradient-to-r from-brand-green/40 to-transparent origin-left hidden md:block"
+        />
+
         <div className="relative max-w-4xl mx-auto">
           <Reveal>
             <span className="text-xs uppercase tracking-[0.2em] text-brand-green font-semibold">
@@ -20,7 +72,7 @@ export default function About() {
               <br />
               <span className="text-brand-green text-glow">CARSON PICKLEBALL</span>
             </h1>
-            <p className="text-xl text-muted mt-6 max-w-2xl leading-relaxed">
+            <p className="text-xl text-foreground/80 mt-6 max-w-2xl leading-relaxed">
               A community built on passion, inclusivity, and the love of the game.
             </p>
           </Reveal>

@@ -26,7 +26,6 @@ export default function Forum() {
     <>
       {/* Hero */}
       <section className="pt-32 pb-16 px-6 relative">
-        <div className="absolute inset-0 grid-pattern opacity-50" />
         <div className="relative max-w-7xl mx-auto">
           <Reveal>
             <span className="text-xs uppercase tracking-[0.2em] text-brand-green font-semibold">
