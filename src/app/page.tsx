@@ -115,7 +115,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="text-lg text-muted max-w-xl mx-auto mb-10 leading-relaxed"
+            className="text-lg text-foreground/80 max-w-xl mx-auto mb-10 leading-relaxed"
           >
             Your source for all things pickleball in Carson CA and immediate
             area. Open play, leagues, tournaments, and community for all ages
@@ -415,7 +415,7 @@ export default function Home() {
             <h2 className="font-[family-name:var(--font-display)] text-5xl md:text-7xl tracking-tight mb-4">
               READY TO <span className="text-brand-green text-glow">PADDLE UP</span>?
             </h2>
-            <p className="text-lg text-muted mb-10 max-w-lg mx-auto">
+            <p className="text-lg text-foreground/80 mb-10 max-w-lg mx-auto">
               Join the Carson Pickleball community. Connect with players, share
               your game, and be part of something special.
             </p>
