@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-// Lucide removed brand icons; inline simple SVGs instead
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -10,15 +10,14 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-7 h-7 rounded-sm bg-brand-green flex items-center justify-center">
-                <span className="font-[family-name:var(--font-display)] text-background text-sm leading-none font-bold">
-                  CP
-                </span>
-              </div>
-              <span className="font-[family-name:var(--font-display)] text-lg tracking-wider">
-                CARSON PICKLEBALL
-              </span>
+            <div className="mb-4">
+              <Image
+                src="/images/logo.png"
+                alt="Carson Pickleball"
+                width={140}
+                height={48}
+                className="h-9 w-auto"
+              />
             </div>
             <p className="text-muted text-sm leading-relaxed mb-6">
               Your source for all things pickleball in Carson CA and the

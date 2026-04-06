@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ExternalLink } from "lucide-react";
@@ -21,15 +22,15 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/80 border-b border-card-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-sm bg-brand-green flex items-center justify-center">
-            <span className="font-[family-name:var(--font-display)] text-background text-lg leading-none font-bold">
-              CP
-            </span>
-          </div>
-          <span className="font-[family-name:var(--font-display)] text-xl tracking-wider text-foreground group-hover:text-brand-green transition-colors">
-            CARSON PICKLEBALL
-          </span>
+        <Link href="/" className="flex items-center group">
+          <Image
+            src="/images/logo.png"
+            alt="Carson Pickleball"
+            width={140}
+            height={48}
+            className="h-9 w-auto group-hover:brightness-110 transition-all"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}

@@ -13,6 +13,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Carson Pickleball | It's a Vibe!",
   description: "Your source for all things pickleball in Carson CA and immediate area. Open play, leagues, tournaments, and community for all ages and skill levels.",
+  icons: {
+    icon: "/images/favicon.png",
+    apple: "/images/favicon.png",
+  },
 };
 
 export default function RootLayout({
