@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/Reveal";
+import { HeroVideoLoop } from "@/components/HeroVideoLoop";
 import {
   MapPin,
   Users,
@@ -62,15 +63,7 @@ export default function Home() {
       {/* === HERO === */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
         {/* Background video */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/images/hero-video.mp4" type="video/mp4" />
-        </video>
+        <HeroVideoLoop />
         {/* Dark overlay for readability */}
         <div className="absolute inset-0 bg-background/70" />
         {/* Gradient fade to solid at bottom */}
