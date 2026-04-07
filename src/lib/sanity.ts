@@ -1,11 +1,16 @@
-// Sanity client stub -- returns null for all queries when packages aren't installed
-// This lets the site work with hardcoded fallbacks
-export const client = {
-  async fetch(_query: string) {
-    return null;
-  },
-};
+import { createClient } from "next-sanity";
+import { createImageUrlBuilder } from "@sanity/image-url";
+import { projectId, dataset, apiVersion } from "@/sanity/env";
 
-export function urlFor(_source: any) {
-  return { url: () => "" };
+export const client = createClient({
+  projectId,
+  dataset,
+  apiVersion,
+  useCdn: true,
+});
+
+const builder = createImageUrlBuilder({ projectId, dataset });
+
+export function urlFor(source: any) {
+  return builder.image(source);
 }
