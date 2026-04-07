@@ -2,6 +2,8 @@ import { client } from "@/lib/sanity";
 import { courtsQuery } from "@/lib/queries";
 import { CourtsPage } from "@/components/CourtsPage";
 
+export const revalidate = 60;
+
 const defaultCourts = [
   { name: "Hemingway Park", courtCount: 8, address: "700 E. Gardena Bl. Carson CA 90746", mapUrl: "https://maps.google.com/?q=700+E+Gardena+Blvd+Carson+CA+90746", weekdayHours: "Mon - Fri: 8 AM - 8:30 PM", weekendHours: "Sat - Sun: 8 AM - 4:30 PM", features: ["8 dedicated pickleball courts", "Free public access", "Lighted courts", "Parking available"], accentColor: "green" },
   { name: "Stevenson Park", courtCount: 4, address: "17400 Lysander Dr. Carson CA 90746", mapUrl: "https://maps.google.com/?q=17400+Lysander+Dr+Carson+CA+90746", weekdayHours: "Mon - Fri: 8 AM - 8:30 PM", weekendHours: "Sat - Sun: 8 AM - 4:30 PM", features: ["4 dedicated pickleball courts", "Free public access", "Restroom facilities", "Parking available"], accentColor: "blue" },

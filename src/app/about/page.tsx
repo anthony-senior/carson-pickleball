@@ -2,6 +2,8 @@ import { client } from "@/lib/sanity";
 import { aboutPageQuery } from "@/lib/queries";
 import { AboutPage } from "@/components/AboutPage";
 
+export const revalidate = 60;
+
 const defaults = {
   heroHeading1: "NO PLACE LIKE",
   heroHeading2: "CARSON PICKLEBALL",

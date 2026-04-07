@@ -2,6 +2,8 @@ import { client } from "@/lib/sanity";
 import { galleryQuery } from "@/lib/queries";
 import { GalleryPage } from "@/components/GalleryPage";
 
+export const revalidate = 60;
+
 const defaultPhotos = [
   { imageUrl: "https://cdn.prod.website-files.com/6940950f26454356a111ceda/699895cead669d4fda3c0271_AW8A5308.jpg", caption: "Court action at Hemingway Park", aspect: "aspect-[4/3]" },
   { imageUrl: "https://cdn.prod.website-files.com/6940950f26454356a111ceda/699895cf9d3e43d48121326b_SEN00893.jpg", caption: "Community tournament day", aspect: "aspect-square" },

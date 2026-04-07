@@ -56,6 +56,8 @@ const defaultEvents = [
   },
 ];
 
+export const revalidate = 60;
+
 export default async function Home() {
   const [sanityData, calendarEvents] = await Promise.all([
     client.fetch(homepageQuery).catch(() => null),
