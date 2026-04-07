@@ -1,16 +1,11 @@
-import { createClient } from "@sanity/client";
-import { createImageUrlBuilder } from "@sanity/image-url";
-import { projectId, dataset, apiVersion } from "@/sanity/env";
+// Sanity client stub - site runs on hardcoded content
+// Replace with real @sanity/client when ready to connect CMS
+export const client = {
+  async fetch(_query: string) {
+    return null;
+  },
+};
 
-export const client = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-  useCdn: true,
-});
-
-const builder = createImageUrlBuilder({ projectId, dataset });
-
-export function urlFor(source: any) {
-  return builder.image(source);
+export function urlFor(_source: any) {
+  return { url: () => "" };
 }
