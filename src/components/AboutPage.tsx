@@ -101,7 +101,7 @@ export function AboutPage({ data }: { data: AboutPageData }) {
               <div className="space-y-5 text-foreground/85 leading-relaxed">
                 {data.storyParagraphs ? (
                   data.storyParagraphs.map((paragraph, i) => (
-                    <p key={i}>{paragraph}</p>
+                    <p key={i} style={{ whiteSpace: "pre-line" }}>{paragraph}</p>
                   ))
                 ) : (
                   <>
@@ -165,7 +165,7 @@ export function AboutPage({ data }: { data: AboutPageData }) {
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-green/20 bg-brand-green/5 text-sm text-brand-green mb-6">
                 The Philosophy
               </span>
-              <p className="text-foreground/85 leading-relaxed text-lg">
+              <p className="text-foreground/85 leading-relaxed text-lg" style={{ whiteSpace: "pre-line" }}>
                 {data.philosophyText}
               </p>
             </div>
@@ -176,7 +176,7 @@ export function AboutPage({ data }: { data: AboutPageData }) {
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-blue/20 bg-brand-blue/5 text-sm text-brand-blue mb-6">
                 Our Commitment
               </span>
-              <p className="text-foreground/85 leading-relaxed text-lg">
+              <p className="text-foreground/85 leading-relaxed text-lg" style={{ whiteSpace: "pre-line" }}>
                 {data.commitmentText}
               </p>
             </div>
