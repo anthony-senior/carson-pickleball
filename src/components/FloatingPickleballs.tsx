@@ -63,7 +63,7 @@ export function FloatingPickleballs({ variant }: { variant: keyof typeof presets
             ease: "easeInOut",
             delay: ball.delay,
           }}
-          className="absolute rounded-full border-2 border-brand-green"
+          className="absolute rounded-full bg-brand-green"
           style={{
             width: ball.size,
             height: ball.size,
@@ -74,16 +74,13 @@ export function FloatingPickleballs({ variant }: { variant: keyof typeof presets
             opacity: ball.opacity,
           }}
         >
-          {ball.holes && (
-            <div
-              className="absolute inset-[15%] grid grid-cols-3 grid-rows-3 gap-[2px]"
-              style={{ opacity: 0.6 }}
-            >
-              {[...Array(9)].map((_, j) => (
-                <div key={j} className="rounded-full bg-brand-green/30" />
-              ))}
-            </div>
-          )}
+          <div
+            className="absolute inset-[15%] grid grid-cols-3 grid-rows-3 gap-[2px]"
+          >
+            {[...Array(9)].map((_, j) => (
+              <div key={j} className="rounded-full bg-background" />
+            ))}
+          </div>
         </motion.div>
       ))}
     </div>
