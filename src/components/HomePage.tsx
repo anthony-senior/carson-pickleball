@@ -136,7 +136,7 @@ export function HomePage({ data, stats, events }: HomePageProps) {
             transition={{ duration: 0.7, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="font-[family-name:var(--font-display)] text-[clamp(4rem,12vw,11rem)] leading-[0.85] tracking-tight mb-2 text-left"
           >
-            <span className="block pl-[0.05em]">{data.heroHeadline1}</span>
+            <span className="block">{data.heroHeadline1}</span>
             <span className="block text-brand-green text-glow">{data.heroHeadline2}</span>
           </motion.h1>
 
