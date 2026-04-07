@@ -1,4 +1,4 @@
-import { client } from "@/lib/sanity";
+import { client, assetRefToUrl } from "@/lib/sanity";
 import { galleryQuery } from "@/lib/queries";
 import { GalleryPage } from "@/components/GalleryPage";
 
@@ -27,6 +27,12 @@ const defaultPhotos = [
 
 export default async function Gallery() {
   const sanityPhotos = await client.fetch(galleryQuery).catch(() => null);
-  const photos = sanityPhotos?.length ? sanityPhotos : defaultPhotos;
+  // Convert uploaded image refs to URLs, fall back to imageUrl field
+  const photos = sanityPhotos?.length
+    ? sanityPhotos.map((p: any) => ({
+        ...p,
+        imageUrl: assetRefToUrl(p.imageAssetRef) || p.imageUrl,
+      }))
+    : defaultPhotos;
   return <GalleryPage photos={photos} />;
 }

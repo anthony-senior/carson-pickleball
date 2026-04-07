@@ -19,11 +19,11 @@ export const client = {
   },
 };
 
-export function urlFor(source: any) {
-  if (!source?.asset?._ref) return { url: () => "" };
-  const ref = source.asset._ref;
-  const [, id, dimensions, format] = ref.split("-");
-  return {
-    url: () => `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${id}-${dimensions}.${format}`,
-  };
+// Convert a Sanity image asset ref (image-abc123-800x600-png) to a CDN URL
+export function assetRefToUrl(ref: string | null | undefined): string {
+  if (!ref) return "";
+  const parts = ref.split("-");
+  if (parts.length < 4) return "";
+  const [, id, dimensions, format] = parts;
+  return `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${id}-${dimensions}.${format}`;
 }

@@ -1,4 +1,4 @@
-import { client } from "@/lib/sanity";
+import { client, assetRefToUrl } from "@/lib/sanity";
 import { aboutPageQuery } from "@/lib/queries";
 import { AboutPage } from "@/components/AboutPage";
 
@@ -21,11 +21,18 @@ const defaults = {
 export default async function About() {
   const sanityData = await client.fetch(aboutPageQuery).catch(() => null);
 
+  // If Sanity has uploaded images, convert asset refs to URLs
+  const wideFromUpload = assetRefToUrl(sanityData?.wideImageAssetRef);
+  const sideFromUpload = assetRefToUrl(sanityData?.sideImageAssetRef);
+
   const data = {
     ...defaults,
     ...Object.fromEntries(
       Object.entries(sanityData || {}).filter(([, v]) => v != null)
     ),
+    // Uploaded image takes priority > URL field > default
+    wideImageUrl: wideFromUpload || sanityData?.wideImageUrl || defaults.wideImageUrl,
+    sideImageUrl: sideFromUpload || sanityData?.sideImageUrl || defaults.sideImageUrl,
   };
 
   return <AboutPage data={data} />;
