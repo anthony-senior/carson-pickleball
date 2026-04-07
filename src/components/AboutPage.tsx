@@ -79,13 +79,11 @@ export function AboutPage({ data }: { data: AboutPageData }) {
         <div className="max-w-7xl mx-auto">
           <Reveal>
             <div className="rounded-lg overflow-hidden border border-card-border">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={data.wideImageUrl}
                 alt="Carson Pickleball community group photo"
-                width={1600}
-                height={700}
                 className="w-full h-auto object-cover"
-                priority
               />
             </div>
           </Reveal>
@@ -140,11 +138,10 @@ export function AboutPage({ data }: { data: AboutPageData }) {
           <Reveal direction="right">
             <div className="relative">
               <div className="rounded-lg overflow-hidden border border-card-border">
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={data.sideImageUrl}
                   alt="Carson Pickleball players vibin in Carson"
-                  width={860}
-                  height={1000}
                   className="w-full h-auto object-cover"
                 />
               </div>
