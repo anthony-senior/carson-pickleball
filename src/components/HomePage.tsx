@@ -129,25 +129,14 @@ export function HomePage({ data, stats, events }: HomePageProps) {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-card-border bg-card-bg/50 backdrop-blur mb-8"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse" />
-            <span className="text-sm text-white">Carson, California</span>
-          </motion.div>
-
           {/* Main heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="font-[family-name:var(--font-display)] text-[clamp(4rem,12vw,11rem)] leading-[0.85] tracking-tight mb-2"
+            className="font-[family-name:var(--font-display)] text-[clamp(4rem,12vw,11rem)] leading-[0.85] tracking-tight mb-2 text-left"
           >
-            <span className="block">{data.heroHeadline1}</span>
+            <span className="block pl-[0.05em]">{data.heroHeadline1}</span>
             <span className="block text-brand-green text-glow">{data.heroHeadline2}</span>
           </motion.h1>
 
@@ -158,7 +147,13 @@ export function HomePage({ data, stats, events }: HomePageProps) {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="font-[family-name:var(--font-display)] text-2xl md:text-3xl tracking-[0.3em] text-white mb-8"
           >
-            {data.heroTagline}
+            {data.heroTagline.includes("VIBE") ? (
+              <>
+                {data.heroTagline.split("VIBE")[0]}
+                <span className="text-brand-green text-glow-sm">VIBE</span>
+                {data.heroTagline.split("VIBE")[1]}
+              </>
+            ) : data.heroTagline}
           </motion.p>
 
           {/* Description */}
